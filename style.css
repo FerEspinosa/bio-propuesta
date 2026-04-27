@@ -301,24 +301,53 @@ main {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
 }
 
 .feature-list li {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     align-items: flex-start;
     color: var(--text-secondary);
 }
 
 .feature-list li i {
     color: var(--accent-1);
-    font-size: 1.2rem;
-    margin-top: 4px;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
-.feature-list li strong {
+.feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.feature-text strong {
     color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.feature-text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Mobile adjustments for feature list */
+@media (max-width: 768px) {
+    .feature-list li {
+        gap: 12px;
+    }
+    
+    .feature-text strong {
+        font-size: 1rem;
+    }
+    
+    .feature-text p {
+        font-size: 0.9rem;
+    }
 }
 
 .sub-section {
