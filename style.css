@@ -33,8 +33,8 @@ h1, h2, h3, h4, .logo, .badge, .phase-badge {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     overflow: hidden;
 }
@@ -128,8 +128,9 @@ h1, h2, h3, h4, .logo, .badge, .phase-badge {
     align-items: center;
     padding: 24px 5%;
     position: fixed;
-    width: 100%;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
@@ -617,6 +618,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 16px 4%;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+
     .timeline::before {
         left: 20px;
     }
