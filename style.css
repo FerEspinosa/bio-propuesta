@@ -205,11 +205,9 @@ main {
     padding: 0 5% 100px;
     max-width: 1200px;
     margin: 0 auto;
-    overflow-x: hidden;
 }
 
 section {
-    overflow-x: hidden;
     width: 100%;
 }
 
@@ -647,12 +645,12 @@ footer {
     }
     .timeline-item {
         padding-left: 60px;
-        overflow: hidden; /* Prevent child animations from leaking */
+        /* Removed overflow: hidden to prevent icon clipping */
     }
     .timeline-icon {
-        width: 40px;
-        height: 40px;
-        left: 0;
+        width: 44px;
+        height: 44px;
+        left: -2px; /* Centered on the 20px line: (20+1) - (44/2) = -1 approx */
         font-size: 1.2rem;
     }
     .payment-options {
@@ -662,7 +660,13 @@ footer {
         font-size: 2.2rem;
     }
 
-    /* Further reduce translation on small screens */
-    .slide-in-right { transform: translateX(20px); }
-    .slide-in-left { transform: translateX(-20px); }
+    /* Use vertical animations on mobile to avoid horizontal displacement and overflow */
+    .slide-in-right, .slide-in-left { 
+        transform: translateY(20px); 
+        opacity: 0;
+    }
+    .visible { 
+        transform: translateY(0) !important; 
+        opacity: 1 !important;
+    }
 }
